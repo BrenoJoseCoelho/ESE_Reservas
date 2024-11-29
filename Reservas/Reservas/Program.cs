@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Prometheus;
 using ReservasApi.Context;
 using ReservasApi.Repositories.Participants;
 using ReservasApi.Repositories.Reservations;
@@ -50,7 +51,7 @@ app.UseSwaggerUI(c =>
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseMetricServer();
 app.UseRouting();
 
 app.UseAuthorization();
